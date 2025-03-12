@@ -822,3 +822,251 @@ footer {
     width: 100%;
 
 }
+
+
+/* Media Query */
+
+/* Media Query for Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+    /* General Styles */
+    * {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Navbar */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        margin-left: 0;
+        height: auto;
+        gap: 20px;
+    }
+
+    .nav-menu {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 70px; /* Adjust based on header height */
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show the menu when active */
+    }
+
+    .nav-item {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .nav-item:hover {
+        color: rgb(28, 91, 228);
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    img {
+        width: 150px;
+        height: auto;
+        margin-right: 0;
+    }
+    /* Home Landing Page */
+    .homeBody {
+        height: 60vh;
+    }
+
+    .homeBody h1 {
+        font-size: 36px;
+        padding-top: 10%;
+    }
+
+    .homeBody h3 {
+        font-size: 18px;
+    }
+
+    /* Sign Up Button */
+    .signup {
+        height: 40px;
+        width: 90px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .signup h4 {
+        font-size: 12px;
+    }
+
+    /* About Section */
+    .about {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .about .title {
+        font-size: 36px;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .about .content {
+        width: 100%;
+        padding: 0 20px;
+        font-size: 14px; /* Smaller text size */
+        line-height: 1.6; /* Better readability */
+        text-align: justify;
+    }
+
+    .about .content .slogan p {
+        font-size: 18px; /* Smaller slogan text */
+        font-style: italic;
+        font-weight: bold;
+        text-align: center; /* Center align slogan */
+    }
+
+    .about .about-logos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about .about-logos .about-card1 {
+        width: 80%; /* Adjust width for mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center align content */
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .about-card1 p {
+        font-size: 16px; /* Smaller text */
+        line-height: 1.5; /* Better spacing */
+    }
+
+    /* Event Section */
+    .banner-title {
+        font-size: 24px;
+    }
+
+    .banner-text {
+        font-size: 16px;
+        width: 100%;
+        float: none;
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+
+    .image1, .image2, .image3 {
+        width: 150px; /* Smaller images */
+        height: 150px;
+        border-radius: 50%; /* Bubble-like structure */
+        margin: 10px auto; /* Center align images */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    }
+
+    .image2 {
+        position: static; /* Remove absolute positioning */
+    }
+
+    .event-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .event-card h3 {
+        font-size: 20px; /* Smaller heading */
+    }
+
+    .event-card p {
+        font-size: 14px; /* Smaller text */
+        line-height: 1.5; /* Better spacing */
+    }
+
+    /* Explore Events Button */
+    .explore-link {
+        height: 50px;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .footer-links ul {
+        padding: 0;
+    }
+
+    .footer-links-list li {
+        margin: 5px 0; /* Reduce margin for links */
+    }
+
+    .footer-contact {
+        text-align: center; /* Center align contact info */
+        margin-top: 20px; /* Add spacing */
+    }
+
+    .footer-contact p {
+        font-size: 14px; /* Smaller text */
+        line-height: 1.5; /* Better spacing */
+        margin: 5px 0; /* Reduce margin */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Stack footer bottom content */
+        text-align: center;
+        padding: 10px 20px; /* Add padding */
+    }
+}
+
+/* Media Query for Tablets (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjustments for tablets */
+    .homeBody h1 {
+        font-size: 50px;
+    }
+
+    .homeBody h3 {
+        font-size: 20px;
+    }
+
+    .about .title {
+        font-size: 50px;
+    }
+
+    .about .content {
+        font-size: 18px;
+    }
+
+    .event-card {
+        width: 45%;
+    }
+}

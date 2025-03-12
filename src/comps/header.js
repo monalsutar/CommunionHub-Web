@@ -1,26 +1,28 @@
-import React from "react";
+import React,{ useState } from "react";
 import './all.css'
 import logo from '../assets/logo.png'
 import { Link } from "react-router-dom";
 
 function Header() {
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen); // Toggle the menu state
+    };
+
     return (
-        <div className="header">
-            <header>
-
-                <img src={logo} />
-
-                <h4><Link to="/home" className="nav-item">Home</Link></h4>
-                <h4><Link to="/home"className="nav-item">About</Link></h4>
-                <h4><Link to="/explore"className="nav-item">Events</Link></h4>
-                <h4><Link to="/home"className="nav-item">Contact Us</Link></h4>
-
-
-            </header>
-            <div className="signup">
-                <h4>Sign Up</h4>
-            </div>
-        </div>
+        <header>
+            <img src={logo} alt="Logo" />
+            <button className="menu-toggle" onClick={toggleMenu}>
+                ☰
+            </button>
+            <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+                <a href="#" className="nav-item">Home</a>
+                <a href="#" className="nav-item">About</a>
+                <a href="#" className="nav-item">Events</a>
+                <a href="#" className="nav-item">Contact Us</a>
+            </nav>
+        </header>
     );
 }
 
