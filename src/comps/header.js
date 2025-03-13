@@ -1,10 +1,10 @@
-import React,{ useState } from "react";
-import './all.css'
-import logo from '../assets/logo.png'
+import React, { useState } from "react";
+import './all.css';
+import logo from '../assets/logo.png';
 import { Link } from "react-router-dom";
 
 function Header() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Menu hidden by default
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen); // Toggle the menu state
@@ -17,10 +17,10 @@ function Header() {
                 ☰
             </button>
             <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-                <a href="#" className="nav-item">Home</a>
-                <a href="#" className="nav-item">About</a>
-                <a href="#" className="nav-item">Events</a>
-                <a href="#" className="nav-item">Contact Us</a>
+                <Link to="/" className="nav-item">Home</Link>
+                <Link to="/" className="nav-item">About</Link>
+                <Link to="/events" className="nav-item">Events</Link>
+                <Link to="/contact" className="nav-item">Contact Us</Link>
             </nav>
         </header>
     );
