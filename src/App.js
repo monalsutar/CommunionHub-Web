@@ -6,33 +6,53 @@ import About from "./comps/about";
 import Footer from "./comps/footer";
 import Body from "./comps/body";
 import Events from "./comps/events";
+import Login from "./comps/login";
 
 function App() {
   return (
     <Router>
-      <Header />
+      
       <Routes>
         <Route path="/" element={
           <>
+            <Header />
             <Body />
             <About />
             <Events />
+            <Footer />
           </>
         } />
-        <Route path="/explore" element={<ExploreEvents />} />
+        <Route path="/explore" element={
+          <>
+          <Header />
+          <ExploreEvents />
+          <Footer />
+          </>
+          } />
         <Route path="/home" element={
           <>
-          <Body />
-          <About />
-          <Events />
-        
-        </>
+            <Header />
+            <Body />
+            <About />
+            <Events />
+            <Footer />
+          </>
+        } />
+
+
+        <Route path="/events" element={
+          <>
+          <Header />
+          <ExploreEvents />
+          <Footer />
+          </>
           } />
-  
-        
-        <Route path="/events" element={<ExploreEvents />} />
+
+        <Route path="/login" element={<Login />} />
+
+
       </Routes>
-      <Footer />
+      
     </Router>
   );
 }

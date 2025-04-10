@@ -1,0 +1,77 @@
+.login-container {
+    display: flex;
+    height: 100vh;
+    width: 120vw;
+    justify-content: space-evenly;
+    gap: 0;
+    /* padding: 6%; */
+    /* align-items: center; */
+}
+
+.title{
+    margin: 0;
+    padding: 0;
+}
+
+.login-form{
+    padding: 4%;
+    overflow-y: hidden;
+}
+form{
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+input{
+    height: 20%;
+
+}
+
+.sign-in-but{
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    background-color: navy;
+    margin: 0%;
+    padding: 0;
+    /* padding: 5%; */
+    color: white;
+    /* overflow-y: hidden; */
+}
+
+.form-comps{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dont-acc{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    /* background-color: pink; */
+    height: 120px;
+}
+
+.dont-acc p{
+    margin: 0%;
+    padding: 0%;
+    /* background-color: brown; */
+    text-align: start;
+    overflow-y: hidden;
+}
+
+.forgot-pass{
+    display: flex;
+    justify-content: space-between;
+    margin: 0%;
+    padding: 0%;
+}
+.login-image img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+}

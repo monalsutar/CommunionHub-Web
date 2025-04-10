@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './all.css';
+import './header.css';
 import logo from '../assets/logo.png';
 import { Link } from "react-router-dom";
 
@@ -22,6 +22,10 @@ function Header() {
                 <Link to="/events" className="nav-item">Events</Link>
                 <Link to="/contact" className="nav-item">Contact Us</Link>
             </nav>
+
+            <div className="header-right">
+                <Link to="/login" className="sign-in-button">Sign In</Link>
+            </div>
         </header>
     );
 }

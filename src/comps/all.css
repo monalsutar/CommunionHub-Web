@@ -47,38 +47,197 @@ img {
     margin-right: 150px;
 }
 
-/* Home Landing Page */
-.homeBody {
+/* 
+  Overall container: 
+    - Two-column grid for medium+ screens, 
+    - Single column for smaller screens 
+*/
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Default single column */
+    gap: 2rem;
+    /* Spacing between columns/rows */
+    max-width: 1200px;
+    /* Constrain width for large screens */
+    margin: 0 auto;
+    /* Center the grid horizontally */
+    padding: 2rem 1rem;
+    /* Top/Bottom and left/right padding */
 
-    background-image: url("../assets/p2.jpg");
-    /* Correct syntax */
-    background-size: cover;
-    /* Ensures the image covers the full area */
-    background-position: center;
-    /* Centers the image */
-    background-repeat: no-repeat;
-    /* Prevents tiling */
-    height: 90vh;
-    /* Ensure enough height to see the background */
-    width: 100vw;
-    /* Full width */
-
+    /* Media query for 768px+ (md) to form two columns */
+    /* Adjust as needed for your breakpoints */
 }
 
-.homeBody h1 {
+@media (min-width: 768px) {
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+        /* Two columns on medium+ devices */
+    }
+}
+
+/* 
+    Left content column (text/badges/etc.) 
+    We'll use spacing within it for stacking elements 
+  */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Vertically center the content */
+}
+
+/* Large title for 'Connect Communities' */
+.hero-title {
+    font-size: 3rem;
+    /* ~text-5xl or larger */
+    font-weight: 800;
+    /* Extra bold */
+    color: #000;
+    /* Black text color */
+    margin: 0;
+    /* Remove default margin */
+    line-height: 1.3;
+    /* Adjust line-height */
+}
+
+/* Subheading text */
+.hero-subtitle {
+    font-size: 1.125rem;
+    /* ~text-lg */
+    color: #6b7280;
+    /* Gray-500 color hex */
+    margin-top: 0.75rem;
+    /* Small spacing on top */
+}
+
+/* Badge showing unlimited advantages */
+.advantage-badge {
+    margin-top: 1.5rem;
+    /* Some vertical space above */
+    display: inline-block;
+    /* So padding/horizontal center works nicely */
+    background-color: #dbeafe;
+    /* ~bg-blue-100 */
+    color: #2563eb;
+    /* ~text-blue-600 */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    /* Fully rounded edges */
+}
+
+/* Secondary headings: 'Unite, Innovate', 'Connect, Inspires Together' */
+.section-heading {
+    font-size: 2rem;
+    /* ~text-4xl or so */
+    font-weight: bold;
+    color: #000;
+    margin: 1rem 0 0 0;
+    /* Space above each line */
+}
+
+/* Horizontal group of small profile images + additional badge */
+.profile-group {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding-top: 4%;
-    font-size: 70px;
-    color: orangered;
+    gap: 0.5rem;
+    /* Spacing between items */
+    margin-top: 1rem;
 }
 
-.homeBody h3 {
+/* Circular profile images */
+.profile-img {
+    width: 2.5rem;
+    /* ~w-10 */
+    height: 2.5rem;
+    /* ~h-10 */
+    border-radius: 50%;
+    /* Perfect circle */
+    object-fit: cover;
+}
+
+/* Badge to show number of people */
+.people-badge {
+    background-color: #dbeafe;
+    /* Blue-100 */
+    color: #2563eb;
+    /* Blue-600 */
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    /* ~text-sm */
+    font-weight: 500;
+}
+
+/* Paragraph for the descriptive text */
+.hero-description {
+    max-width: 32rem;
+    /* ~max-w-2xl */
+    font-size: 1rem;
+    /* ~text-base */
+    color: #4b5563;
+    /* ~gray-600 */
+    margin-top: 1.5rem;
+    line-height: 1.5;
+    /* More comfortable line spacing */
+}
+
+/* Call-to-action button */
+.cta-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    /* ~text-sm */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Darken background on hover */
+.cta-button:hover {
+    background-color: #374151;
+    /* ~hover:bg-gray-800 */
+}
+
+/* 
+    Right column for the elliptical images. 
+    We'll arrange them in a column, 
+    with each elliptical image stacked vertically.
+  */
+.hero-images {
     display: flex;
-    align-items: start;
+    flex-direction: column;
+    align-items: center;
+    /* Center each ellipse horizontally */
     justify-content: center;
-    font-size: 25px;
+    gap: 1.5rem;
+    /* Space between ellipses */
+    margin-top: 2rem;
+    /* Space above in mobile view */
+}
+
+/* Wrapper for each ellipse to easily scale/animate */
+.ellipse-wrapper {
+    width: 200px;
+    height: 260px;
+    overflow: hidden;
+    /* Hide any overflow from the ellipse shape */
+    border-radius: 40px;
+    /* Creates an elliptical shape */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Actual image inside the ellipse wrapper */
+.ellipse-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Fill the ellipse nicely */
 }
 
 /* Sign Up Button */
@@ -115,16 +274,19 @@ img {
 .about {
     height: 100vh;
     width: 100%;
-    background-color: rgb(207, 237, 237);
+    background-color: #1E1E1E;
+    /* color: white; */
     display: flex;
     justify-content: start;
     align-items: center;
-
+    overflow-y: hidden;
 }
 
 .about .content {
     height: 80%;
+    color: white;
     width: 58%;
+    overflow-y: hidden;
     line-height: 50px;
     font-size: 21px;
     padding: 4%;
@@ -136,19 +298,21 @@ img {
 .about .title {
     height: 40%;
     width: 35%;
+    color: white;
     line-height: 80px;
     font-size: 67px;
     text-justify: auto;
     padding: 6%;
     display: flex;
     flex-direction: column;
-    text-shadow: 0px 2px 4px gray;
+    text-shadow: 0px 2px 1px rgb(255, 255, 255);
 }
 
 .about .content .slogan p {
     font-size: 26px;
     font-style: italic;
     font-weight: bold;
+    color: white;
 }
 
 .about .about-logos img {
@@ -169,11 +333,13 @@ img {
 }
 
 .about .about-logos .about-card1 {
-    background: linear-gradient(135deg, #5e5e5e85, #002974c9);
+    background-color: #2E2E2E;
     /* Blue gradient */
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* overflow: hidden; */
+    overflow-y: hidden;
     justify-content: center;
     /* Centers content vertically */
     text-align: center;
@@ -182,7 +348,7 @@ img {
     border-radius: 20px;
     width: 200px;
     /* Adjust as needed */
-    box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3);
+    /* box-shadow: 0 4px 15px rgba(0, 114, 255, 0.3); */
     /* Soft blue shadow for depth */
     margin-top: 15px;
 }
@@ -1018,7 +1184,7 @@ footer {
 
     .about .content {
         width: 90%;
-       
+
         font-size: 14px;
         /* Smaller text size */
         line-height: 1.6;
@@ -1040,7 +1206,7 @@ footer {
     .about .about-logos {
         flex-direction: column;
         align-items: center;
-        
+
     }
 
     .about .about-logos .about-card1 {
@@ -1055,10 +1221,11 @@ footer {
         padding: 15px;
     }
 
-    .about-card1{
+    .about-card1 {
         width: 100px;
         display: flex;
     }
+
     .about-card1 p {
         font-size: 16px;
         /* Smaller text */
@@ -1076,9 +1243,10 @@ footer {
 
     /* Event Section */
 
-    .event-section-main{
+    .event-section-main {
         margin: 0;
     }
+
     .banner-title {
         font-size: 20px;
         text-align: center;
@@ -1094,11 +1262,11 @@ footer {
         text-align: center;
     }
 
-    .grid-title{
+    .grid-title {
         text-align: center;
     }
 
-    .grid-images{
+    .grid-images {
         display: flex;
         flex-direction: column;
         height: 60vh;
@@ -1131,7 +1299,7 @@ footer {
         margin: 10px 0;
     }
 
-    .event-title{
+    .event-title {
         font-size: 27px;
     }
 
@@ -1139,13 +1307,14 @@ footer {
         font-size: 20px;
         /* Smaller heading */
     }
+
     .event-card h4 {
         font-size: 17px;
         line-height: 40px;
         /* Smaller heading */
     }
 
-    .category{
+    .category {
         margin-top: 10px;
         line-height: 40px;
     }
@@ -1164,29 +1333,31 @@ footer {
         padding: 10px 20px;
     }
 
-    .event-popup{
+    .event-popup {
         width: 80%;
         padding: 5%;
         /* height: 50%; */
         overflow: scroll;
     }
 
-    .event-form{
+    .event-form {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 10px;
     }
-    .event-form select{
+
+    .event-form select {
         width: 95%;
     }
 
-    .event-form h3{
+    .event-form h3 {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    .form-buttons{
+
+    .form-buttons {
         display: flex;
         justify-content: space-evenly;
         gap: 150px;
@@ -1199,7 +1370,7 @@ footer {
         text-align: center;
     }
 
-    .footer-logo{
+    .footer-logo {
         margin-left: 100px;
     }
 
@@ -1220,7 +1391,7 @@ footer {
         /* Reduce margin for links */
     }
 
-    .footer-social{
+    .footer-social {
         display: flex;
         justify-content: center;
         /* margin-left: 10px; */
@@ -1244,9 +1415,9 @@ footer {
 
     .footer-bottom {
         flex-direction: column;
-    
+
         text-align: center;
-        
+
     }
 }
 

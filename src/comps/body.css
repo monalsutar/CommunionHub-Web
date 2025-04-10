@@ -1,0 +1,305 @@
+/* Wrapper holding everything */
+.body-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    /* Matches your screenshot background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+/* TOP SECTION:
+     Contains big heading & subheading, centered horizontally
+  */
+.top-section {
+    text-align: center;
+    /* margin-top: 2rem; Space from top */
+}
+
+/* Main heading: 'Connect Communities' */
+.main-heading {
+    font-size: 3.75rem;
+    /* ~60px (close to text-6xl) */
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    /* Remove default margin */
+}
+
+/* Subheading: 'Bridging gaps ... dash of fun!' */
+.subheading {
+    font-size: 1.125rem;
+    /* ~18px, text-lg */
+    color: #6b7280;
+    /* gray-500-ish */
+    margin-top: 0.75rem;
+}
+
+/* MIDDLE SECTION:
+     Two-column layout for the core content on the left and elliptical images on the right
+  */
+.middle-section {
+    width: 100%;
+    max-width: 1999px;
+    /* margin-top: 2rem; */
+    /* Gap under the top section */
+    display: flex;
+    justify-content: space-between;
+    /* gap: 5%; */
+}
+
+/* For medium/large screens, switch to two columns */
+
+
+/* LEFT COLUMN - text, badge, images, button */
+.left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: self-start; */
+    /* align-items: start; */
+    margin: 0%;
+    padding-left: 7%;
+
+    padding-right: 2%;
+}
+
+/* Badge: '✔ Unlimited Advantages' */
+.advantages-badge {
+    /* display: inline-block; */
+    background-color: #dbeafe;
+    /* ~blue-100 */
+    color: #2563eb;
+    /* ~blue-600 */
+    font-weight: 500;
+    padding: 0rem 1rem;
+    border-radius: 9999px;
+    /* margin-bottom: 1rem; */
+    align-self: flex-start;
+    /* So it doesn't stretch */
+    margin: 0;
+
+}
+
+/* Secondary Titles: 'Unite, Innovate,' / 'Connect, Inspires Together' */
+.secondary-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 70px;
+    color: #000;
+    text-align: left justify;
+    /* align-self: flex-start; */
+    margin: 0%;
+    padding: 0%;
+    width: 40vw;
+}
+
+.unite-box{
+    width: 100%;
+    font-size: 48px;
+}
+
+.secondary-title img {
+    border-radius: 30%;
+    margin: 0%;
+    padding: 2px;
+}
+
+
+/* Profile row: 3 small images + '+8 peoples' badge */
+.profile-row {
+    display: flex;
+    align-items: start;
+    /* top: 5px; */
+    /* gap: 0.5rem; */
+    /* margin-top: 1rem; */
+}
+
+/* Each small circular image in the row */
+.profile-pic {
+    width: 2.5rem;
+    /* ~40px */
+    height: 2.5rem;
+    /* ~40px */
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* '+8 peoples' badge to the right of small images */
+.people-badge {
+    background-color: #dbeafe;
+    /* ~blue-100 */
+    color: #2563eb;
+    /* ~blue-600 */
+    padding: 0 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    /* ~text-sm */
+    font-weight: 500;
+}
+
+/* Descriptive paragraph */
+.description {
+    font-size: 1rem;
+    /* 16px */
+    line-height: 1.5;
+    color: #4b5563;
+    /* ~gray-600 */
+    /* margin-top: 1.5rem; */
+    max-width: 40rem;
+    /* Limit width for readability */
+    text-align: center justify;
+}
+
+/* 'View Our Services →' button */
+.services-button {
+    background-color: #2c2c2c;
+
+    border-radius: 17px;
+    /* rounded corners */
+    /* font-size: 100px !important;  */
+    
+    font-weight: 500;
+    line-height: 25px;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    /* align-self:normal; */
+    align-self: self-start;
+    margin-left: 3%;
+    gap: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 5%;
+}
+
+.services-button:hover {
+    background-color: #374151;
+    /* ~gray-800 */
+}
+
+/* RIGHT COLUMN - elliptical images side by side */
+.right-col {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+    width: 55%;
+    padding-right: 5%;
+    /* gap: 1rem; */
+}
+
+
+
+
+/* ======================= CUSTOM ADJUSTMENTS START ======================= */
+
+/* 1. Main Heading: Ensure center alignment and update font color */
+.main-heading {
+    text-align: center;
+    color: #333;
+    /* Adjusted font color for a better match */
+}
+
+/* 2. People Badge: Align perfectly with the paragraph */
+.people-badge {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    /* margin-left: 8px; */
+    /* Adjust margin to align it inline with text */
+    line-height: 3;
+}
+
+/* 3. Increase the size of images in the paragraph and make them square */
+.profile-pic {
+    width: 3rem !important;
+    /* Increased size */
+    height: 3rem !important;
+    /* Increased size */
+    border-radius: 0;
+    /* Remove circular shape to make them square */
+}
+
+/* 4. Services Button: Reduce padding and font size to shrink its height/width */
+.services-button {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.75rem !important;
+}
+
+/* 5. Left Column Alignment: Center all contents in the left column */
+.left-col {
+    align-items: center;
+    text-align: center;
+    /* width: 100%; */
+}
+
+/* 6. Right Column Adjustments for Capsule-Shaped & Waterfall Layout */
+
+/* Change the flex direction to column for a cascading (waterfall) effect */
+.right-col {
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+/* 7. Font Color for All Text Adjustments: Apply a consistent color */
+.main-heading,
+.subheading,
+.secondary-title,
+.description {
+    color: #333;
+}
+
+/* ======================== CUSTOM ADJUSTMENTS END ======================== */
+/* For small screens (phones) */
+@media (max-width: 699px) {
+    *{
+        padding: 2%;
+    }
+    .main-heading {
+        font-size: 2.25rem;
+    }
+
+    .secondary-title {
+        font-size: 1.75rem;
+        line-height: 2.5rem;
+        width: 100%;
+    }
+    .advantages-badge {
+        align-self: center;
+        padding: 2%;
+    }
+
+    .description {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+    }
+
+    .middle-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-col,
+    .right-col {
+        width: 100%;
+        padding: 1rem 0;
+
+    }
+    .profile-pic {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+
+    .services-button {
+        align-self: center;
+    }
+}
