@@ -97,8 +97,6 @@ CommunionHub-Web/
 ├── package-lock.json
 └── README.md
 
-```
-
 CommunionHub-Web/
 ├── backend/
 │   ├── models/
@@ -115,6 +113,10 @@ CommunionHub-Web/
 │   │
 │   ├── server.js
 │   └── .env
+
+
+```
+
 
 
 - **public/**: Static files.
