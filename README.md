@@ -68,16 +68,54 @@ This will generate a `build` folder containing the production-ready files.
 ```plaintext
 CommunionHub-Web/
 ├── public/
+│   ├── index.html
+│   └── favicon.ico
+│
 ├── src/
 │   ├── assets/
+│   │   └── logo.png                # (optional: images, icons etc.)
+│   │
 │   ├── components/
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   ├── EventCard.js            # component to show individual events
+│   │   └── AddEvent.js             # our main event creation form
+│   │
 │   ├── pages/
-│   ├── App.js
-│   └── index.js
+│   │   ├── Home.js
+│   │   ├── Login.js
+│   │   ├── Register.js
+│   │   └── Events.js               # Page to list all public events
+│   │
+│   ├── App.js                      # Routing and main layout
+│   ├── index.js                    # ReactDOM render
+│   └── App.css                     # Global CSS (optional)
+│
+├── .env                            # for sensitive config like DB URLs
+├── .gitignore
 ├── package.json
+├── package-lock.json
 └── README.md
+
 ```
 
+CommunionHub-Web/
+├── backend/
+│   ├── models/
+│   │   └── Event.js
+│   │
+│   ├── routes/
+│   │   └── eventRoutes.js
+│   │
+│   ├── controllers/
+│   │   └── eventController.js
+│   │
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── server.js
+│   └── .env
+
 
 - **public/**: Static files.
 - **src/**: Source code.
