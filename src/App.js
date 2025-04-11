@@ -7,11 +7,13 @@ import Footer from "./comps/footer";
 import Body from "./comps/body";
 import Events from "./comps/events";
 import Login from "./comps/login";
+import Signup from "./comps/signup";
+
 
 function App() {
   return (
     <Router>
-      
+
       <Routes>
         <Route path="/" element={
           <>
@@ -24,12 +26,22 @@ function App() {
         } />
         <Route path="/explore" element={
           <>
-          <Header />
-          <ExploreEvents />
-          <Footer />
+            <Header />
+            <ExploreEvents />
+            <Footer />
           </>
-          } />
+        } />
         <Route path="/home" element={
+          <>
+            <Header />
+            <Body />
+            <About />
+            <Events />
+            <Footer />
+          </>
+        } />
+
+        <Route path="/body" element={
           <>
             <Header />
             <Body />
@@ -42,17 +54,19 @@ function App() {
 
         <Route path="/events" element={
           <>
-          <Header />
-          <ExploreEvents />
-          <Footer />
+            <Header />
+            <ExploreEvents />
+            <Footer />
           </>
-          } />
+        } />
 
         <Route path="/login" element={<Login />} />
 
+        <Route path="/signup" element={<Signup />} />
+
 
       </Routes>
-      
+
     </Router>
   );
 }
