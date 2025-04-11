@@ -1,28 +1,25 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+require("dotenv").config();
 
 const app = express();
+const PORT = 5000;
 
-// CORS setup - allows frontend to talk to backend
-app.use(cors({
-  origin: "http://localhost:3000",  // frontend origin
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
-
+app.use(cors());
 app.use(express.json());
 
-// Connect MongoDB
-mongoose.connect("mongodb://127.0.0.1:27017/communionDB")
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error("DB Error:", err));
+mongoose
+  .connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
-// Routes
 const authRoutes = require("./routes/auth");
-app.use("/api", authRoutes);
+const protectedRoutes = require("./routes/protected");
 
-const PORT = 5000;
+app.use("/api", authRoutes);
+app.use("/api", protectedRoutes);
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

@@ -83,11 +83,11 @@ img {
 .logout-button {
     padding: 0.5rem 1rem !important;
     font-size: 1rem !important;
-    background-color: #2c2c2c;
+    background-color: orange;
     border-radius: 20px;
     font-weight: 500;
     line-height: 20px;
-    color: white;
+    color: black;
     border: none;
     /* float: right; */
     cursor: pointer;
@@ -95,7 +95,7 @@ img {
 }
 
 .logout-button:hover {
-    background-color: green;
+    background-color: orangered;
 }
 
 /* Responsive (Mobile) Styles: up to 768px */

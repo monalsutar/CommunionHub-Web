@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./body.css";
 
@@ -10,6 +11,17 @@ import P4 from "../assets/p4.png";
 
 
 export default function Body() {
+    const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      navigate("/login");
+    }
+    // You can optionally verify token with backend here if needed
+  }, [navigate]);
+
+  const username = localStorage.getItem("username");
     return (
         <div className="body-wrapper">
             {/* TOP SECTION: Centered heading and subheading */}

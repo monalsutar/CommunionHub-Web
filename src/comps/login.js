@@ -17,17 +17,24 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await axios.post("http://localhost:5000/api/login", formData);
+      console.log("Response from backend:", res.data); //  Add this line
+
       if (res.data.success) {
-        localStorage.setItem("username", res.data.username);
+        localStorage.setItem("username", res.data.name); //  Change this
+
+        localStorage.setItem("token", res.data.token);
         navigate("/body");
       } else {
-        alert(res.data.message);
+        alert(res.data.message); // like: "Invalid credentials"
       }
     } catch (err) {
       console.error(err);
       alert("Something went wrong during login");
     }
   };
+
+
+
 
   return (
     <div className="login-container">
